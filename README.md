@@ -21,8 +21,8 @@
 **Turn Your Ideas Into Real Projects.**
 
 ProjectPilot AI is an AI-powered project planning assistant that helps students and developers
-transform a raw software idea into a structured, actionable development plan — project overview,
-requirements, tech stack, database design, and a development roadmap — through a conversational
+transform a raw software idea into a structured, actionable development plan - project overview,
+requirements, tech stack, database design, and a development roadmap - through a conversational
 workspace powered by the Google Gemini API.
 
 🔗 **Live Demo:** https://chatbot-projectpilot-ai.vercel.app
@@ -30,14 +30,14 @@ workspace powered by the Google Gemini API.
 ## Features
 
 - **AI Chat** with persistent conversation memory, saved per project to a real database
-- **Google Login** — projects and chat history are tied to your account, not just your browser
-- **Project Generator** — turns a one-line idea into a full project overview
-- **Requirements Generator** — functional requirements (FR-01, FR-02, ...)
-- **Tech Stack Advisor** — stack recommendation with reasoning, tailored per project
-- **Database Generator** — table structure + relationships
-- **Development Roadmap** — phased plan from setup to deployment
-- **Per-project AI settings** — Persona (Mentor / Developer / Quick), Experience Level
-  (Beginner / Intermediate / Advanced), Language (Bahasa Indonesia / English), and Project Type —
+- **Google Login** - projects and chat history are tied to your account, not just your browser
+- **Project Generator** - turns a one-line idea into a full project overview
+- **Requirements Generator** - functional requirements (FR-01, FR-02, ...)
+- **Tech Stack Advisor** - stack recommendation with reasoning, tailored per project
+- **Database Generator** - table structure + relationships
+- **Development Roadmap** - phased plan from setup to deployment
+- **Per-project AI settings** - Persona (Mentor / Developer / Quick), Experience Level
+  (Beginner / Intermediate / Advanced), Language (Bahasa Indonesia / English), and Project Type -
   each project remembers its own configuration, saved to the database
 - **Pin & delete** projects from the sidebar
 - **Export conversation** as a Markdown file (handy for continuing the discussion in Claude,
@@ -57,7 +57,7 @@ workspace powered by the Google Gemini API.
 
 ## Project Structure
 
-\`\`\`
+```
 projectpilot-ai/
 ├── backend/
 │   ├── src/
@@ -71,8 +71,8 @@ projectpilot-ai/
 │   └── package.json
 ├── frontend/
 │   ├── public/
-│   │   ├── logo.png            (your custom logo — see below)
-│   │   └── icons/               (your custom quick-action icons — see below)
+│   │   ├── logo.png            (your custom logo - see below)
+│   │   └── icons/               (your custom quick-action icons - see below)
 │   ├── src/
 │   │   ├── components/ (Sidebar, ChatBox, MessageBubble, QuickActions, SettingsPanel,
 │   │   │                EmptyState, Icon, Logo)
@@ -86,7 +86,7 @@ projectpilot-ai/
 └── supabase/
     ├── schema.sql                       (run first)
     └── migration_002_pin_and_settings.sql  (run second)
-\`\`\`
+```
 
 ## How to Run Locally
 
@@ -97,31 +97,31 @@ Go to [Google AI Studio](https://aistudio.google.com/) → generate an API key.
 1. Create a free project at [supabase.com](https://supabase.com).
 2. In the SQL Editor, run `supabase/schema.sql`, then `supabase/migration_002_pin_and_settings.sql`.
 3. Under Authentication → Providers, enable **Google** (requires a Google Cloud OAuth Client ID
-   and Secret — see [Google Cloud Console](https://console.cloud.google.com)).
+   and Secret - see [Google Cloud Console](https://console.cloud.google.com)).
 4. Under Settings → API, copy your **Project URL** and **Publishable (anon) key**.
 
 ### 3. Backend
 
-\`\`\`bash
+```bash
 cd backend
 npm install
 cp .env.example .env
 # open .env and paste your GEMINI_API_KEY
 npm start
-\`\`\`
+```
 Backend runs at `http://localhost:5000`.
 
 ### 4. Frontend
 
 In a new terminal:
 
-\`\`\`bash
+```bash
 cd frontend
 npm install
 cp .env.example .env
 # fill in VITE_API_BASE_URL, VITE_SUPABASE_URL, VITE_SUPABASE_ANON_KEY
 npm run dev
-\`\`\`
+```
 Frontend runs at `http://localhost:5173`.
 
 ### 5. Try it
@@ -137,7 +137,7 @@ Roadmap), pin/delete projects from the sidebar, and export a conversation to Mar
 ## Custom Branding
 
 The app ships with emoji placeholders that automatically upgrade to custom images the moment you
-add them — no code changes needed:
+add them - no code changes needed:
 
 - `frontend/public/logo.png` - replaces the "ProjectPilot" text wordmark everywhere
 - `frontend/public/icons/idea.png`, `requirements.png`, `techstack.png`, `database.png`,
@@ -148,7 +148,7 @@ add them — no code changes needed:
 - The Gemini API key lives only in the backend's environment variables and is never exposed to
   the frontend. The React app talks exclusively to the Express backend, which is the only place
   that calls the Gemini API.
-- The Supabase anon/publishable key is safe to expose in the frontend by design — actual data
+- The Supabase anon/publishable key is safe to expose in the frontend by design - actual data
   access is enforced server-side by Row Level Security policies (see `supabase/schema.sql`), so a
   user can only ever read or write their own projects and messages.
 
@@ -167,9 +167,14 @@ redirect back to `localhost` instead of your live site.
 
 ## Screenshots
 
-### Landing Page ![Landing Page](screenshots/landing-page.png) 
-### Workspace ![Workspace](screenshots/workspace-empty.png) 
-### Conversation ![Conversation](screenshots/conversation.png)
+### Landing Page
+![Landing Page](screenshots/landing-page.png)
+
+### Workspace
+![Workspace](screenshots/workspace-empty.png)
+
+### Conversation
+![Conversation](screenshots/conversation.png)
 
 ---
 
