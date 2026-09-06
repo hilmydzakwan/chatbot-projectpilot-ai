@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Markdown content coming back from the AI */
+.ai-markdown h2 {
+  @apply font-display text-lg font-semibold mt-4 mb-2 text-navy;
+}
+.ai-markdown h3 {
+  @apply font-display text-base font-semibold mt-3 mb-1 text-navy;
+}
+.ai-markdown p {
+  @apply mb-2 leading-relaxed;
+}
+.ai-markdown ul {
+  @apply list-disc pl-5 mb-2 space-y-1;
+}
+.ai-markdown ol {
+  @apply list-decimal pl-5 mb-2 space-y-1;
+}
+.ai-markdown strong {
+  @apply font-semibold text-navy;
+}
+.ai-markdown code {
+  @apply bg-navy/5 text-navy px-1 py-0.5 rounded text-sm font-mono;
+}
+.ai-markdown pre {
+  @apply bg-navy text-paper p-3 rounded-md overflow-x-auto text-sm mb-2 font-mono;
+}
+.ai-markdown pre code {
+  @apply bg-transparent text-paper p-0;
+}
+
+.ai-markdown table {
+  @apply w-full mb-3 border-collapse text-sm;
+}
+.ai-markdown th,
+.ai-markdown td {
+  @apply border border-navy/20 px-3 py-1.5 text-left align-top;
+}
+.ai-markdown thead th {
+  @apply bg-navy/5 font-semibold text-navy;
+}
+.ai-markdown tbody tr:nth-child(even) {
+  @apply bg-navy/[0.03];
+}
+
+/* visible keyboard focus, kept consistent across interactive elements */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #d6432e;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
