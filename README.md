@@ -71,21 +71,21 @@ projectpilot-ai/
 │   └── package.json
 ├── frontend/
 │   ├── public/
-│   │   ├── logo.png            (your custom logo - see below)
-│   │   └── icons/               (your custom quick-action icons - see below)
+│   │   ├── logo.png            
+│   │   └── icons/               
 │   ├── src/
-│   │   ├── components/ (Sidebar, ChatBox, MessageBubble, QuickActions, SettingsPanel,
-│   │   │                EmptyState, Icon, Logo)
-│   │   ├── pages/ (Home, Workspace)
-│   │   ├── services/ (api.js, supabaseClient.js, projectsApi.js)
+│   │   ├── components/                      (Sidebar, ChatBox, MessageBubble, QuickActions, SettingsPanel, EmptyState, Icon, Logo)
+│   │   │                
+│   │   ├── pages/                           (Home, Workspace)
+│   │   ├── services/                        (api.js, supabaseClient.js, projectsApi.js)
 │   │   ├── utils/exportChat.js
 │   │   ├── App.jsx
 │   │   └── main.jsx
 │   ├── .env.example
 │   └── package.json
 └── supabase/
-    ├── schema.sql                       (run first)
-    └── migration_002_pin_and_settings.sql  (run second)
+    ├── schema.sql                           (run first)
+    └── migration_002_pin_and_settings.sql   (run second)
 ```
 
 ## How to Run Locally
@@ -133,15 +133,6 @@ Open `http://localhost:5173`, click **Start Building**, sign in with Google, and
 You'll be prompted to configure the AI's Persona, Experience Level, Language, and Project Type for
 this new project first. Then try the Quick Action buttons (Requirements, Tech Stack, Database,
 Roadmap), pin/delete projects from the sidebar, and export a conversation to Markdown.
-
-## Custom Branding
-
-The app ships with emoji placeholders that automatically upgrade to custom images the moment you
-add them - no code changes needed:
-
-- `frontend/public/logo.png` - replaces the "ProjectPilot" text wordmark everywhere
-- `frontend/public/icons/idea.png`, `requirements.png`, `techstack.png`, `database.png`,
-  `roadmap.png`, `wave.png`, `memory.png` - replace the emoji icons
 
 ## Security
 
