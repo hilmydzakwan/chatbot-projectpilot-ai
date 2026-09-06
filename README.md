@@ -7,7 +7,7 @@ transform a raw software idea into a structured, actionable development plan —
 requirements, tech stack, database design, and a development roadmap — through a conversational
 workspace powered by the Google Gemini API.
 
-🔗 **Live Demo:** [your-frontend.vercel.app](https://your-frontend.vercel.app) — *replace with your actual Vercel URL*
+🔗 **Live Demo:** https://chatbot-projectpilot-ai.vercel.app/
 
 ## Features
 
